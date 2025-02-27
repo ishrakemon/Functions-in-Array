@@ -2,6 +2,7 @@
 
 // Function Prototypes
 void TakingArrayElement(double Array[], int Size);
+void displayArrayElements(double Array[], int Size);
 
 int main(){
     int size;
@@ -13,6 +14,9 @@ int main(){
     std::cout<< "-----------------------------------"<<std::endl;
 
     TakingArrayElement(array, size); // Function call for taking array elements input
+
+    std::cout<< "\nArray: ";
+    displayArrayElements(array, size); // Function call for displaying array elements
     
     delete[] array; // Deallocate memory
     return 0;
@@ -23,5 +27,12 @@ void TakingArrayElement(double Array[], int Size){
     for(int i=0; i<Size; i++){
         std::cout<< "Element "<< i+1 <<": ";
         std::cin>> Array[i];
+    }
+}
+
+// Function to display array elements
+void displayArrayElements(double Array[], int Size){
+    for(int i=0; i<Size; i++){
+        std::cout<< Array[i]<<" ";
     }
 }
